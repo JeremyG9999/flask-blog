@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Your Followers</title>
+</head>
+<body>
+    <a href="/home">Back to Home Page</a>
+    <h1>Your Followers</h1>
+    <ul>
+        {% for datas in data %}
+            <li>
+                {{ datas.user_name }} 
+                <a href="/delete_follower/{{ datas.id }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Follow a User</h2>
+    <form action="/post_followers" method="POST">
+        <input name="user_name" required>
+        <button type="submit">Follow</button>
+    </form>
+</body>
+</html>

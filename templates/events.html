@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Events</title>
+</head>
+<body>
+    <a href="/home">Back to Home Page</a><br>
+    <a href="/birthdays">Your Birthday!</a>
+    <h2>Events</h2>
+    <ul>
+        {% for datas in data %}
+            <li>
+                {{ datas.title }} - {{ datas.description }} by {{ datas.user_events.user_name }}
+                <a href="/delete_events/{{ datas.id }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h3>Create an Event</h3>
+    <form action="/post_events" method="POST">
+        <label for="title">Title:</label><br>
+        <input name="title" required><br>
+        <label for="description">Description:</label><br>
+        <textarea name="description" required></textarea><br>
+        <button type="submit">Create Event</button>
+    </form>
+</body>
+</html>

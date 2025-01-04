@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Chat</title>
+</head>
+<body>
+    <a href="/home">Back to Home Page</a>
+    <h2>Global Chat</h2>
+    <form action="/post_chat_message" method="POST">
+        <textarea name="content"></textarea>
+        <button type="submit">Send</button>
+    </form>
+    <h3>Messages:</h3>
+        {% for datas in data %}
+        <li>
+            {{ datas.user_messages.user_name }}: {{ datas.content }} 
+            <a href="/delete_message/{{ datas.id }}">Delete</a>
+        </li>
+        {% endfor %}
+</body>
+</html>

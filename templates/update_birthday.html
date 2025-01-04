@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>Update Birthday</title>
+</head>
+<body>
+    <a href="/birthdays">Back to Birthdays</a>
+    <h1>Update Birthday</h1>
+    <form action="/post_update_birthday" method="POST">
+        <input name="title" value="{{ birthday.title }}" required><br>
+        <input type="date" name="birthday_date" value="{{ birthday.birthday_date }}" required><br>
+        <button type="submit">Update Birthday</button>
+    </form>
+</body>
+</html>

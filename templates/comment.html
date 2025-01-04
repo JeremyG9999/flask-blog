@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>Create Comment</title>
+</head>
+<body>
+    <a href="/home">Back to Home Page</a>
+    <h3>Create Comment</h3>
+    <form action="/post_comment/{{ post_id }}" method="POST">
+        <label>Content</label>
+        <textarea name="content" required></textarea><br>
+        <button type="submit">Create Comment</button>
+    </form>
+</body>
+</html>

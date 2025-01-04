@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Birthdays</title>
+</head>
+<body>
+    <a href="/event">Back to Events</a>
+    <h2>Birthdays</h2>
+    <h3>User: {{ user.user_name }}</h3> 
+    <ul>
+        {% if data %}
+            <li>{{ data.title }} - {{ data.birthday_date }}</li>
+            <a href="/update_birthday">Edit Birthday</a>
+        {% else %}
+            <form action="/post_birthdays" method="POST">
+                <input name="title" required><br>
+                <input type="date" name="birthday_date" required><br>
+                <button type="submit">Create Birthday</button>
+            </form>
+        {% endif %}
+    </ul>
+</body>
+</html>

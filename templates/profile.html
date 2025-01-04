@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+    <a href="/home">Back to Home Page</a><br>
+    <a href="/feedback">Website Feedback</a><br>
+    <h1>{{ current_user.user_name }} Profile</h1> 
+    <h1>User Profile</h1>
+    <p>Username- {{ current_user.user_name }}</p>
+    <p>Email- {{ current_user.email }}</p>
+    <p>Bio- 
+        {% if data %}
+            {{ data.bio }}
+            <a href="/update_profile">Edit Bio</a>
+        {% else %}
+            <form action="/post_bio" method="POST"> 
+                <textarea name="bio" required></textarea><br>
+                <button type="submit">Add Bio</button>
+            </form>
+        {% endif %}
+    </p>
+</body>
+</html>

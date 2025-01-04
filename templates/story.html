@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Create Story</title>
+</head>
+<body>
+    <a href="/home">Back to Home Page</a>
+    <h3>Create Story</h3>
+    <form action="/post_story" method="POST">
+        <label>Story Content</label>
+        <textarea name="content" required></textarea><br>
+        <button type="submit">Create Story</button>
+    </form>
+    <h3>Stories</h3>
+    <ul>
+        {% for datas in data %}
+        <li>
+            {{ datas.content }} by {{ datas.user_story.user_name }}
+            <a href="/delete_story/{{ datas.id }}">Delete</a>
+        </li> 
+        {% endfor %}
+    </ul>
+</body>
+</html>

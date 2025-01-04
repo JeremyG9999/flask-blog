@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Your Website Feedback</title>
+</head>
+<body>
+    <a href="/profile">Back to Profile Page</a>
+    <h2>Your Website Feedback</h2>
+    <ul>
+        {% for datas in data %}
+            <li>{{ datas.content }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Create Some Feedback</h3>
+    <form action="/post_feedback" method="POST">
+        <textarea name="content" required></textarea><br>
+        <button type="submit">Create Feedback</button>
+    </form>
+</body>
+</html>

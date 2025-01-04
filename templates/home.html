@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <a href="/login">Logout</a>
+    <h2>Hello, {{ current_user.user_name }}</h2> 
+    <h2>User Accounts</h2>
+    <a href="/create_blog_post">Create New Blog Post</a><br>
+    <a href="/profile">User Profile</a><br>
+    <a href="/chat">Global Chat</a><br>
+    <a href="/notes">Notes</a><br>
+    <a href="/story">Stories</a><br>
+    <a href="/event">Events</a><br>
+    <a href="/followers">Follower</a><br>
+    <h3>Blog Posts List</h3>
+    <ol>
+        {% for datas in data %}
+        <li>
+            {{ datas.title }} by {{ datas.author_user.user_name }}
+            <a href="/update_post/{{ datas.id }}">Update</a> = 
+            <a href="/post_details/{{ datas.id }}">Details</a> = 
+            <a href="/delete_post/{{ datas.id }}">Delete</a> = 
+            <a href="/post_details/{{ datas.id }}">Comment</a> =
+            <a href="/report_post/{{ datas.id }}">Report</a>
+        </li>
+        {% endfor %}
+    </ol>
+</body>
+</html>
